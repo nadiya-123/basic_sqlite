@@ -1,0 +1,30 @@
+sqlite> .database
+main: C:\sqlite\sqlite-tools-win32-x86-3370200\movies.db r/w
+sqlite> CREATE TABLE MOVIE(
+   ...> MOVIE_NAME TEXT NOT NULL,
+   ...> ACTOR TEXT NOT NULL,
+   ...> ACTRESS TEXT NOT NULL,
+   ...> RELEASE_DATE INT NOT NULL,
+   ...> DIRECTOR TEXT NOT NULL);
+sqlite> .tables
+MOVIE
+sqlite> INSERT INTO MOVIE VALUES ('KRISH', 'HRITHIK_ROSHAN', 'PREITY_ZINTA', '23-06-2006', 'RAKESH_ROSHAN');
+sqlite> SELECT * FROM MOVIE;
+KRISH|HRITHIK_ROSHAN|PREITY_ZINTA|23-06-2006|RAKESH_ROSHAN
+sqlite> .header on
+sqlite> .mode column
+sqlite> select * from movie;
+MOVIE_NAME  ACTOR           ACTRESS       RELEASE_DATE  DIRECTOR
+----------  --------------  ------------  ------------  -------------
+KRISH       HRITHIK_ROSHAN  PREITY_ZINTA  23-06-2006    RAKESH_ROSHAN
+sqlite>  INSERT INTO MOVIE VALUES ('BODYGUARD', 'SALMAN_KHAN', 'KAREENA_KAPOOR', '31-08-2011', 'SIDDIQUE');
+sqlite> select * from movie;
+MOVIE_NAME  ACTOR           ACTRESS         RELEASE_DATE  DIRECTOR
+----------  --------------  --------------  ------------  -------------
+KRISH       HRITHIK_ROSHAN  PREITY_ZINTA    23-06-2006    RAKESH_ROSHAN
+BODYGUARD   SALMAN_KHAN     KAREENA_KAPOOR  31-08-2011    SIDDIQUE
+sqlite> SELECT * FROM MOVIE WHERE MOVIE_NAME='BODYGUARD';
+MOVIE_NAME  ACTOR        ACTRESS         RELEASE_DATE  DIRECTOR
+----------  -----------  --------------  ------------  --------
+BODYGUARD   SALMAN_KHAN  KAREENA_KAPOOR  31-08-2011    SIDDIQUE
+sqlite>
